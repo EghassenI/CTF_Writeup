@@ -1,0 +1,16 @@
+the encryption of data may result on non printable characters so we neeed to encode with another thing other than ascii , it's common to use hex or base64 to do it.In Python, the bytes.fromhex(your_input).decode() function can be used to convert hex to ascii ,as for the base64,first we are going to import base64 as a library then use base64.b64decode(your_input).decode() function.
+
+hint the flag is the decoded part1+part2 
+
+
+
+b64 =  Z2FURV83SGVfdzR5X1QwXzN2M3J5N0hJbmd9  = gaTE_7He_w4y_T0_3v3ry7HIng}
+
+hex = 454e49547b6845785f416e445f6234354536345f49355f345f = ENIT{hEx_AnD_b45E64_I5_4_
+
+
+
+code py = 	from base64 import b64decode
+		part1="454e49547b6845785f416e445f6234354536345f49355f34"
+		part2="X2dhVEVfN0hlX3c0eV9UMF8zdjNyeTdISW5nfQ=="
+		print(bytes.fromhex(part1)+b64decode(part2))

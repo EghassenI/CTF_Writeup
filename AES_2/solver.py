@@ -1,0 +1,10 @@
+
+from Crypto.Util.number import  long_to_bytes,bytes_to_long
+
+xor = lambda a,b: bytes(_a^_b for _a,_b in zip(a,b))
+
+msg=b"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tristique elit mattis velit tincidunt luctus. Nam vulputate suscipit lectus quis dapibus"
+encryEncrypted_Flag=bytes.fromhex("c127d58bee46cef11d0ac442dcfa037fc0aa0c4d738d00454a9dcc3f5ea4bc0ae4966f15097a1f205e164bed0397dc5728b88c31783a42bd329203")[16:]
+Encrypted_msg=bytes.fromhex("c127d58bee46cef11d0ac442dcfa037fc98b377c659c36415187d47852fc8f11def72b23142c2120082309993f91fc157a92b965533904f126b31795d30b8f1453f57dd1b8ada165175de0817f815f6b3b70b278acdaa8f67518b9e1c435f7b07c4912765c01f600180bc81c0d5eb569e6c0d454864cade9e28fd073283635d3db5e75f9c3de5407d882dd32fc2f1368645cd20f37aceb0c769ab6704def3c3064351713b4c174926b04ce9b")[16:]
+
+print(xor(encryEncrypted_Flag,xor(msg,Encrypted_msg)))
